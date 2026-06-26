@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{{ settings.site_name }}</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+body{
+background:#f4f7fc;
+color:#111827;
+font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+overflow-x:hidden;
+}
+
+.navbar{
+background:rgba(255,255,255,0.96) !important;
+padding:18px 0;
+border-bottom:1px solid #dbe4ff;
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+.hero{
+background-image:url('{{ settings.header_image }}');
+height:88vh;
+background-size:cover;
+background-position:center;
+position:relative;
+}
+
+.overlay{
+background:linear-gradient(
+135deg,
+rgba(7,21,43,0.76),
+rgba(10,30,60,0.68)
+);
+
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.card{
+border:none;
+border-radius:24px;
+overflow:hidden;
+background:white;
+color:#111827;
+box-shadow:0 10px 30px rgba(7,21,43,0.08);
+transition:0.35s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(7,21,43,0.15);
+}
+
+.product-img{
+height:320px;
+object-fit:cover;
+}
+
+.gold{
+color:#d4af37;
+}
+
+.navy{
+color:#07152b;
+}
+
+.custom-btn{
+background:#07152b;
+color:white;
+font-weight:600;
+border:none;
+padding:13px 20px;
+border-radius:14px;
+transition:0.3s;
+text-decoration:none;
+display:inline-block;
+box-shadow:0 8px 20px rgba(7,21,43,0.18);
+}
+
+.custom-btn:hover{
+background:#0d2245;
+color:white;
+transform:translateY(-2px);
+}
+
+.whatsapp-btn{
+background:#25D366;
+color:white;
+font-weight:600;
+padding:13px 22px;
+border-radius:14px;
+text-decoration:none;
+display:inline-block;
+transition:0.3s;
+margin:8px;
+}
+
+.whatsapp-btn:hover{
+background:#1ebe5d;
+color:white;
+}
+
+.fb-btn{
+background:#1877F2;
+color:white;
+font-weight:600;
+padding:13px 22px;
+border-radius:14px;
+text-decoration:none;
+display:inline-block;
+transition:0.3s;
+margin:8px;
+}
+
+.fb-btn:hover{
+background:#0f5ec7;
+color:white;
+}
+
+.review-btn{
+background:linear-gradient(
+135deg,
+#d4af37,
+#ffd54f
+);
+
+color:#07152b;
+font-weight:700;
+padding:15px 28px;
+border-radius:16px;
+text-decoration:none;
+display:inline-block;
+margin-top:20px;
+font-size:20px;
+box-shadow:0 10px 25px rgba(212,175,55,0.35);
+transition:0.3s;
+}
+
+.review-btn:hover{
+transform:scale(1.04);
+color:#07152b;
+}
+
+.popup-banner{
+background:white;
+}
+
+.section-title{
+font-weight:700;
+margin-bottom:35px;
+font-size:40px;
+}
+
+.logo-title{
+font-family:'Orbitron',sans-serif;
+font-size:30px;
+font-weight:700;
+letter-spacing:1px;
+margin:0;
+color:#07152b;
+}
+
+.hero-title{
+font-family:'Orbitron',sans-serif;
+font-size:74px;
+font-weight:700;
+color:white;
+text-shadow:0 0 20px rgba(255,255,255,0.12);
+}
+
+.hero-sub{
+font-size:28px;
+max-width:900px;
+margin:auto;
+margin-top:20px;
+color:#eef2ff;
+font-weight:300;
+}
+
+.delivery-text{
+font-size:46px;
+font-weight:700;
+margin-top:50px;
+color:#ffd54f;
+text-shadow:0 0 15px rgba(255,213,79,0.15);
+}
+
+footer{
+background:#07152b;
+color:white;
+}
+
+footer p{
+color:#d1d5db;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP BANNER -->
+
+<div class="popup-banner">
+
+<img
+src="{{ settings.popup_banner }}"
+style="
+width:100%;
+max-height:430px;
+object-fit:cover;
+">
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+
+<div class="container d-flex justify-content-between align-items-center">
+
+<div class="d-flex align-items-center gap-3">
+
+<img
+src="https://i.ibb.co/fWzYB0k/logo.png"
+width="62"
+height="62"
+style="
+border-radius:50%;
+object-fit:cover;
+border:2px solid #d4af37;
+padding:2px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+">
+
+<h2 class="logo-title">
+
+{{ settings.site_name }}
+
+</h2>
+
+</div>
+
+<a href="/admin" class="custom-btn">
+
+Admin Panel
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<div>
+
+<h1 class="hero-title">
+
+{{ settings.site_name }}
+
+</h1>
+
+<p class="hero-sub">
+
+{{ settings.tagline }}
+
+</p>
+
+<h2 class="delivery-text">
+
+৫ দিনে সারাদেশে হোম ডেলিভারি দেওয়া হয়
+
+</h2>
+
+<div class="mt-4">
+
+<a
+href="https://wa.me/01718593489"
+target="_blank"
+class="whatsapp-btn">
+
+<i class="fab fa-whatsapp"></i>
+WhatsApp
+
+</a>
+
+<a
+href="https://www.facebook.com/profile.php?id=61564592801041"
+target="_blank"
+class="fb-btn">
+
+<i class="fab fa-facebook-f"></i>
+Facebook
+
+</a>
+
+</div>
+
+<!-- CUSTOMER REVIEW BUTTON -->
+
+<div>
+
+<a
+href="https://www.facebook.com/share/p/1HoVNsKm4p/"
+target="_blank"
+class="review-btn">
+
+⭐ CUSTOMER REVIEWS ⭐
+
+</a>
+
+</div>
+
+<a
+href="#products"
+class="btn btn-warning btn-lg mt-4 px-5 fw-bold rounded-pill">
+
+Explore Products
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<div class="container py-5" id="products">
+
+<h2 class="section-title navy">
+
+Featured Products
+
+</h2>
+
+<div class="row g-4">
+
+{% for p in products %}
+
+<div class="col-md-4">
+
+<div class="card h-100">
+
+<img
+src="{{ p.image }}"
+class="product-img">
+
+<div class="card-body d-flex flex-column">
+
+<h4 class="fw-bold">
+
+{{ p.name }}
+
+</h4>
+
+<h3 class="gold mt-2">
+
+৳ {{ p.price }}
+
+</h3>
+
+<div class="mt-2 mb-3">
+
+⭐⭐⭐⭐⭐
+
+</div>
+
+<p class="text-secondary">
+
+Premium customizable gift item.
+
+</p>
+
+<div class="mt-auto">
+
+<a
+href="/buy/{{ p.id }}"
+class="custom-btn w-100 text-center">
+
+Customize & Order
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<footer class="text-center py-5 mt-5">
+
+<h2 class="gold mb-4">
+
+Contact Here:
+
+</h2>
+
+<h4 class="mb-3">
+
+Contact US
+
+</h4>
+
+<p
+style="
+font-size:24px;
+">
+
+Phone: 01718593489 (Whatsapp)
+
+</p>
+
+<p class="mt-4">
+
+© 2026 {{ settings.site_name }} — All Rights Reserved
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
